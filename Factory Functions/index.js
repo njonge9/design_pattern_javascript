@@ -128,3 +128,40 @@ console.log({
     reputation: player1.giveReputation(),
     level: player1.getlevel(),
 })
+
+// The module pattern:IIFEs-
+const calculator = (function () {
+    const add = (a, b) => a + b;
+    const sub = (a, b) => a - b;
+    const mul = (a, b) => a * b;
+    const div = (a, b) => a / b;
+    return { add, sub, mul, div };
+})();
+
+console.log(calculator.add(3,5))
+console.log(calculator.sub(6,2));
+console.log(calculator.mul(14, 5678))
+// Encapsulating with the module pattern
+// encapsulation is bundling DataTransfer, code or something into a single Uint16Array, with selective access to the things inside that unit itself
+// Namespacing is a technique that is used to avoid naming collisions in programs
+const dog = 'snickers';
+function logDog() {
+  console.log(dog);
+}
+logDog()
+function go() {
+  const dog = 'sunny';
+  logDog();
+}
+go();
+
+function isCool(name) {
+    if (name === 'wes') {
+      var cool = true;
+    }
+    console.log(cool);
+    return cool;
+  }
+
+isCool("hj")
+
